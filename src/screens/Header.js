@@ -1,21 +1,39 @@
 import { StyleSheet, Text, View, StatusBar } from "react-native";
 import { SafeAreaView } from "react-native-web";
-import Home from "./src/screens/Home";
+import Home from "./Home";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Icons from "react-native-vector-icons/MaterialIcons";
-import Splash from "./src/screens/Splash";
-import Header from "./src/screens/Header";
-import { NavigationContainer } from "@react-navigation/native";
-import RootNavigator from "./src/navigation/RootNavigator";
+import Splash from "./Splash";
 
-export default function App() {
+export default function Header() {
   return (
-    <NavigationContainer>
-      <RootNavigator />
-    </NavigationContainer>
-    // <>
-    //   <Header />
-    // </>
+    <>
+      <StatusBar backgroundColor={"green"} />
+      <View style={styles.topBar}>
+        <Icons
+          style={{ top: 29, left: 25 }}
+          name="wifi-tethering"
+          size={25}
+          color={"white"}
+        />
+        <Text style={styles.txtStyle}>Live Score</Text>
+      </View>
+      <View style={styles.name}>
+        <Text style={styles.txt1}>Hin</Text>
+        <Text style={styles.txt2}>Jorr</Text>
+        <Icon
+          style={styles.iconStyle}
+          name="cricket"
+          size={70}
+          color={"black"}
+        />
+      </View>
+
+      <Home />
+      {/* <Splash /> */}
+      {/* <Home /> */}
+      {/* <Home /> */}
+    </>
   );
 }
 
